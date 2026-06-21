@@ -2,8 +2,8 @@ from multiprocessing import Pool
 import logging
 import os
 
-from keylogger import Keylogger
-from logger import Logger
+from utils.keylogger import Keylogger
+from utils.logger import Logger
 
 
 if __name__ == "__main__":

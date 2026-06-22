@@ -1,9 +1,9 @@
 {
     "languages": {
         "ID": {
-            "0x409": ["english", "EN"],
-            "0x419" : ["russian", "RU"],
-            "0x422" : ["ukranian", "UA"]
+            "0x409": "english",
+            "0x419" : "russian",
+            "0x422" : "ukranian"
         }, 
         "layouts": {
             "english": [

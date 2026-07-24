@@ -45,7 +45,7 @@ Some use cases for a keylogger and system monitor:
 - Python: 3.10+ (tested on 3.14)
 
 
-  Windows-only because WinSPY relies on ctypes.WinDLL, the Win32 API (win32gui, win32process, GetKeyboardLayout, GetKeyState), and PowerShell cmdlets (Get-PnpDevice) that do not exist on other platforms.
+  Keylogger relies on ctypes.WinDLL, the Win32 API (win32gui, win32process, GetKeyboardLayout, GetKeyState), and PowerShell cmdlets (Get-PnpDevice) that exists only on Windows.
 
 
 ### **Installation**

@@ -1,4 +1,4 @@
-# **Keylogger** - Advanced Keylogger/Logger for Windows
+# **keylogger**
 
 > [!WARNING]
 > THIS PROJECT SHOULD BE USED FOR AUTHORIZED TESTING OR EDUCATIONAL PURPOSES ONLY. YOU ARE FREE TO COPY, MODIFY AND REUSE THE SOURCE CODE AT YOUR OWN RISK.
@@ -51,8 +51,8 @@ Some use cases for a keylogger and system monitor:
 ### **Installation**
 
 ```bash
-git clone https://github.com/th0truth/WinSPY.git
-cd WinSPY
+git clone https://github.com/th0truth/keylogger.git
+cd keylogger
 
 pip install -r requirements.txt
 ```
